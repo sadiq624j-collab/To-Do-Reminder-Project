@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taskly — Your personal to-do list</title>
+  <link rel="stylesheet" href="/style.css"><script src="/script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Taskly home"><span class="brand-icon">✓</span> taskly<span class="brand-dot">.</span></a>
+    <div class="workspace-label">PERSONAL WORKSPACE</div>
+    <div class="nav-active"><span>▤</span> My tasks <span id="sideCount" class="count">0</span></div>
+    <div class="sidebar-note"><span class="spark">✧</span><h3>A little progress,<br>every day.</h3><p>Make room for what matters.<br>One task at a time.</p><div class="note-lines"><i></i><i></i><i></i></div></div>
+    <div class="profile"><span class="avatar">Y</span><div><strong>Your workspace</strong><small>Personal to-do list</small></div></div>
+  </aside>
+  <main>
+    <header><span class="breadcrumb">Workspace <span>/</span> <b>My tasks</b></span><time id="today"></time></header>
+    <section class="page-heading"><div><div class="eyebrow">A CLEAR SPACE. A CLEAR MIND.</div><h1>Make today count<span>.</span></h1><p>Your plans, a little more organized.</p></div><span class="heading-mark" aria-hidden="true">✳</span></section>
+    <section class="stats" aria-label="Task summary">
+      <article class="stat"><span class="stat-icon">▤</span><div><span>Total tasks</span><strong id="total">0</strong></div></article>
+      <article class="stat"><span class="stat-icon amber">◷</span><div><span>In progress</span><strong id="pending">0</strong></div></article>
+      <article class="stat"><span class="stat-icon green">✓</span><div><span>Completed</span><strong id="completed">0</strong></div></article>
+    </section>
+    <section class="composer"><label for="taskInput">What’s on your list?</label><form id="addForm"><input id="taskInput" name="task" placeholder="e.g. Finish the project presentation" maxlength="200" required autocomplete="off"><button class="primary" type="submit"><span aria-hidden="true">+</span> Add task</button></form><p>Start small. Write it down. Make it happen.</p></section>
+    <section class="list-panel" aria-labelledby="listTitle"><div class="list-header"><h2 id="listTitle">Your tasks <span id="listCount">0</span></h2><div class="filters" role="group" aria-label="Filter tasks"><button class="selected" data-filter="all" aria-pressed="true">All tasks</button><button data-filter="pending" aria-pressed="false">Pending</button><button data-filter="done" aria-pressed="false">Completed</button></div></div>
+      <ul id="taskList" aria-label="Tasks"></ul>
+      <div class="empty" id="empty" hidden><div class="empty-icon">✓</div><h3 id="emptyTitle">A fresh start awaits</h3><p id="emptyText">Add your first task above and take the first step.</p></div>
+      <div class="progress-footer"><span id="progressText">0 of 0 tasks completed</span><div class="progress-track" role="progressbar" aria-label="Task completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div><b id="percent">0%</b></div>
+    </section>
+    <footer><span><span class="save-dot"></span> Tasks saved on this computer</span><span>Small steps. Real progress.</span></footer>
+    <p id="notice" role="status" aria-live="polite"></p>
+  </main>
+  <dialog id="deleteDialog"><h2>Delete this task?</h2><p id="deleteName"></p><p>This will remove it from your list.</p><div class="dialog-actions"><button id="cancelDelete">Keep task</button><button id="confirmDelete" class="danger">Delete task</button></div></dialog>
+</body>
+</html>
