@@ -50,7 +50,7 @@ def delete_task():
         print("There is no task available in your list")
         return 
     try:
-        index = int(input("Enter task number to mark done: "))-1
+        index = int(input("Enter task number to delete: "))-1
         if 0 <= index < len(tasks):
             removed = tasks.pop(index)
             print(f"Deleted task: {removed['task']}")
